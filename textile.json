@@ -1,0 +1,37 @@
+[ {
+  "price" : 99,
+  "description" : "Towel",
+  "itemNumber" : 1,
+  "color" : "White",
+  "quantity" : 10
+}, {
+  "price" : 99,
+  "description" : "Towel",
+  "itemNumber" : 2,
+  "color" : "Blue",
+  "quantity" : 5
+}, {
+  "price" : 99,
+  "description" : "Towel",
+  "itemNumber" : 3,
+  "color" : "Red",
+  "quantity" : 3
+}, {
+  "price" : 199,
+  "description" : "Blanket",
+  "itemNumber" : 4,
+  "color" : "Red",
+  "quantity" : 2
+}, {
+  "price" : 399,
+  "description" : "Bed sheet",
+  "itemNumber" : 5,
+  "color" : "White",
+  "quantity" : 4
+}, {
+  "price" : 399,
+  "description" : "Bed sheet",
+  "itemNumber" : 6,
+  "color" : "Blue",
+  "quantity" : 2
+} ]

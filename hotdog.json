@@ -1,0 +1,21 @@
+[ {
+  "price" : 24,
+  "description" : "Plain Hotdog",
+  "quantity" : 20,
+  "flavor" : "Plain"
+}, {
+  "price" : 29,
+  "description" : "Hotdog with mustard",
+  "quantity" : 10,
+  "flavor" : "Mustard"
+}, {
+  "price" : 29,
+  "description" : "Hotdog with ketchup",
+  "quantity" : 10,
+  "flavor" : "Ketchup"
+}, {
+  "price" : 34,
+  "description" : "Hotdog with everything",
+  "quantity" : 5,
+  "flavor" : "Mustard and Ketchup"
+} ]

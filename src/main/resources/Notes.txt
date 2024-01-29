@@ -1,0 +1,31 @@
+Task:
+You are helping a small startup that wants to compete with IKEA. They need a simple
+system that keeps track of product assortment, customers and sold items. 
+
+notes:
+To compete with IKEA the system needs to be able to scale up with multiple locations and warehouses.
+
+objects:
+- furniture (price, description, itemNumber, weight)
+- textile (price, description, itemNumber, color)
+- hot dog (price, description, flavor)
+- customer  (id, name, address, phone and or email)
+* isFurnitureMember (boolean)
+* isTextileMember (boolean)
+* isHotDogMember (boolean)
+
+maybe? - location of where items are stored
+- location (id, name, address, type)
+  type = warehouse, store
+
+actions: (using REST API?)
+- create order
+- get order
+
+
+order controller
+-who is ordering
+-what catagory
+-what item from that category
+-how many
+-discount?

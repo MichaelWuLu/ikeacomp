@@ -1,0 +1,31 @@
+[ {
+  "price" : 1999,
+  "description" : "Table",
+  "itemNumber" : 1,
+  "weight" : "10 Kg",
+  "quantity" : 1
+}, {
+  "price" : 999,
+  "description" : "Chair",
+  "itemNumber" : 2,
+  "weight" : "5 Kg",
+  "quantity" : 4
+}, {
+  "price" : 3999,
+  "description" : "Bed",
+  "itemNumber" : 3,
+  "weight" : "20 Kg",
+  "quantity" : 2
+}, {
+  "price" : 4999,
+  "description" : "Couch",
+  "itemNumber" : 4,
+  "weight" : "30 Kg",
+  "quantity" : 1
+}, {
+  "price" : 5999,
+  "description" : "TV",
+  "itemNumber" : 5,
+  "weight" : "15 Kg",
+  "quantity" : 3
+} ]
