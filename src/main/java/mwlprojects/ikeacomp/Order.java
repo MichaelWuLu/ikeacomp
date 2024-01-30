@@ -14,15 +14,13 @@ public class Order {
     public Order() {
     }
 
-    public Order(int orderNumber, int customerNumber, List<Furniture> furniture, List<Textile> textiles, 
-    List<HotDog> hotdogs, String status, int totalPrice) {
+    public Order(int orderNumber, int customerNumber, List<Furniture> furniture, 
+    List<Textile> textiles, List<HotDog> hotdogs) {
         this.orderNumber = orderNumber;
         this.customerNumber = customerNumber;
         this.furniture = furniture;
         this.textiles = textiles;
         this.hotdogs = hotdogs;
-        this.status = status;
-        this.totalPrice = totalPrice;
     }
 
     // getter for orderNumber

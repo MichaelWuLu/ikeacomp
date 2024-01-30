@@ -25,9 +25,6 @@ public class OrderController {
         List<HotDog> hotdogList = loadHotdogs();
         List<Customer> customerList = loadCustomers();
 
-        // Update order status
-        order.setStatus("Received");
-
         // Validate the order...
         // Check that the customer exists
         boolean customerExists = false;
@@ -125,12 +122,14 @@ public class OrderController {
         }
 
         // Process the order...
-        // Update the stock
+        // Update the stock and calculate the total price
+        int totalPrice = 0;
         // Furniture
         for (Furniture furniture : order.getFurniture()) {
             for (Furniture furnitureFromList : furnitureList) {
                 if (furnitureFromList.getItemNumber() == furniture.getItemNumber()) {
                     furnitureFromList.setQuantity(furnitureFromList.getQuantity() - furniture.getQuantity());
+                    totalPrice += furnitureFromList.getPrice() * furniture.getQuantity();
                 }
             }
         }
@@ -140,6 +139,7 @@ public class OrderController {
             for (Textile textileFromList : textileList) {
                 if (textileFromList.getItemNumber() == textile.getItemNumber()) {
                     textileFromList.setQuantity(textileFromList.getQuantity() - textile.getQuantity());
+                    totalPrice += textileFromList.getPrice() * textile.getQuantity();
                 }
             }
         }
@@ -149,12 +149,16 @@ public class OrderController {
             for (HotDog hotdogFromList : hotdogList) {
                 if (hotdogFromList.getDescription() == hotdog.getDescription()) {
                     hotdogFromList.setQuantity(hotdogFromList.getQuantity() - hotdog.getQuantity());
+                    totalPrice += hotdogFromList.getPrice() * hotdog.getQuantity();
                 }
             }
-        }
+        }  
 
-        // Calculate the total price
+        // Update the orders total price
+        order.setTotalPrice(totalPrice);
         
+        // Set the status
+        order.setStatus("Received");
 
         // Write the updated lists to the JSON files
         try {
@@ -166,15 +170,26 @@ public class OrderController {
         }
 
         // write the updated order to the JSON file
+        // Read the existing orders from the file
+        List<Order> orders;
         try {
-            mapper.writerWithDefaultPrettyPrinter().writeValue(new File("order.json"), order);
+            orders = mapper.readValue(new File("order.json"), new TypeReference<List<Order>>(){});
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load orders", e);
+        }
+
+        // Add the new order to the list
+        orders.add(order);
+
+        // Write the updated list back to the file
+        try {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File("order.json"), orders);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        // Set the status
-        order.setStatus("Processing");
         // Return the processed order
+        // customer then gets the option to compleate the order
         return order;
     }
 
@@ -219,4 +234,12 @@ public class OrderController {
             throw new RuntimeException("Failed to load customers", e);
         }
     }
+    
+    // testing
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello, world!";
+    }
+    
 }
+
