@@ -1,31 +1,21 @@
 [ {
   "customerNumber" : 1,
   "name" : "John",
-  "isFurnitureMember" : false,
-  "isTextileMember" : false,
-  "isHotDogMember" : false
+  "discount" : [ ]
 }, {
   "customerNumber" : 2,
   "name" : "Jane",
-  "isFurnitureMember" : true,
-  "isTextileMember" : false,
-  "isHotDogMember" : false
+  "discount" : [ "Furniture" ]
 }, {
   "customerNumber" : 3,
   "name" : "Jack",
-  "isFurnitureMember" : false,
-  "isTextileMember" : true,
-  "isHotDogMember" : false
+  "discount" : [ "Textile" ]
 }, {
   "customerNumber" : 4,
   "name" : "Jill",
-  "isFurnitureMember" : false,
-  "isTextileMember" : false,
-  "isHotDogMember" : true
+  "discount" : [ "Hotdog" ]
 }, {
   "customerNumber" : 5,
   "name" : "Joe",
-  "isFurnitureMember" : true,
-  "isTextileMember" : true,
-  "isHotDogMember" : false
+  "discount" : [ "Furniture", "Textile", "Hotdog" ]
 } ]

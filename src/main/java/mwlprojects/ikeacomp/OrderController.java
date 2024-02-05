@@ -169,7 +169,6 @@ public class OrderController {
             e.printStackTrace();
         }
 
-        // write the updated order to the JSON file
         // Read the existing orders from the file
         List<Order> orders;
         try {
@@ -234,10 +233,55 @@ public class OrderController {
             throw new RuntimeException("Failed to load customers", e);
         }
     }
+
+    // customer then gets the option to compleate the order
+    @GetMapping("/complete-order/{orderNumber}")
+    //define the orderNumber as a path variable
+    public String compleateOrder(@PathVariable("orderNumber") int orderNumber) {
+        // Read the existing orders from the file
+        List<Order> orders;
+        try {
+            orders = mapper.readValue(new File("order.json"), new TypeReference<List<Order>>(){});
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load orders", e);
+        }
+
+        // Find the order with the given order number
+        Order order = null;
+        for (Order o : orders) {
+            if (o.getOrderNumber() == orderNumber) {
+                order = o;
+                break;
+            }
+        }
+        
+        // If the order is not found, throw an exception
+        if (order == null) {
+            throw new RuntimeException("Order not found");
+        }
+        
+        // Set the status of the order
+        order.setStatus("Delivered");
+
+        // Write the updated list back to the file
+        try {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File("order.json"), orders);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Return the order to the customer
+        return order.toString();
+    }
     
     // testing
     @GetMapping("/hello")
     public String sayHello() {
+        return "Hello, world!";
+    }
+
+    @PostMapping("/post-hello")
+    public String postHello() {
         return "Hello, world!";
     }
     

@@ -1,22 +1,20 @@
 package mwlprojects.ikeacomp;
 
+import java.util.List;
+
 public class Customer {
     private int customerNumber;
     private String name;
 
-    private Boolean isFurnitureMember;
-    private Boolean isTextileMember;
-    private Boolean isHotDogMember;
+    private List<String> discount;
 
     public Customer() {
     }
 
-    public Customer(int customerNumber, String name, Boolean isFurnitureMember, Boolean isTextileMember, Boolean isHotDogMember) {
+    public Customer(int customerNumber, String name, List<String> discount) {
         this.customerNumber = customerNumber;
         this.name = name;
-        this.isFurnitureMember = isFurnitureMember;
-        this.isTextileMember = isTextileMember;
-        this.isHotDogMember = isHotDogMember;
+        this.discount = discount;
     }
 
     // getter for customerNumber
@@ -39,33 +37,13 @@ public class Customer {
         this.name = name;
     }
 
-    // getter for isFurnitureMember
-    public Boolean getIsFurnitureMember() {
-        return this.isFurnitureMember;
+    // getter for discount
+    public List<String> getDiscount() {
+        return this.discount;
     }
 
-    // setter for isFurnitureMember
-    public void setIsFurnitureMember(Boolean isFurnitureMember) {
-        this.isFurnitureMember = isFurnitureMember;
-    }
-
-    // getter for isTextileMember
-    public Boolean getIsTextileMember() {
-        return this.isTextileMember;
-    }
-
-    // setter for isTextileMember
-    public void setIsTextileMember(Boolean isTextileMember) {
-        this.isTextileMember = isTextileMember;
-    }
-
-    // getter for isHotDogMember
-    public Boolean getIsHotDogMember() {
-        return this.isHotDogMember;
-    }
-
-    // setter for isHotDogMember
-    public void setIsHotDogMember(Boolean isHotDogMember) {
-        this.isHotDogMember = isHotDogMember;
+    // setter for discount
+    public void setDiscount(List<String> discount) {
+        this.discount = discount;
     }
 }

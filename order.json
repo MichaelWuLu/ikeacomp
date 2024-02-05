@@ -1,0 +1,16 @@
+[ {
+  "orderNumber" : 0,
+  "customerNumber" : 3,
+  "discount" : [ "Textile" ],
+  "furniture" : [ {
+    "price" : 0,
+    "description" : "Table",
+    "itemNumber" : 0,
+    "weight" : null,
+    "quantity" : 1
+  } ],
+  "textiles" : [ ],
+  "hotdogs" : [ ],
+  "status" : "Delivered",
+  "totalPrice" : 0
+} ]

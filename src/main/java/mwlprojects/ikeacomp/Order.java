@@ -5,19 +5,20 @@ import java.util.List;
 public class Order {
     private int orderNumber;
     private int customerNumber;
+    private List<String> discount;
     private List<Furniture> furniture;
     private List<Textile> textiles;
     private List<HotDog> hotdogs;
-    private String status;  // "Recived", "Processing", "delivered"
+    private String status;  // "Recived", "delivered"
     private int totalPrice;
 
     public Order() {
     }
 
-    public Order(int orderNumber, int customerNumber, List<Furniture> furniture, 
+    public Order(int orderNumber, int customerNumber, List<String> discount, List<Furniture> furniture, 
     List<Textile> textiles, List<HotDog> hotdogs) {
-        this.orderNumber = orderNumber;
         this.customerNumber = customerNumber;
+        this.discount = discount;
         this.furniture = furniture;
         this.textiles = textiles;
         this.hotdogs = hotdogs;
@@ -41,6 +42,16 @@ public class Order {
     // setter for customerNumber
     public void setCustomerNumber(int customerNumber) {
         this.customerNumber = customerNumber;
+    }
+
+    // getter for discount
+    public List<String> getDiscount() {
+        return this.discount;
+    }
+
+    // setter for discount
+    public void setDiscount(List<String> discount) {
+        this.discount = discount;
     }
 
     // getter for furniture

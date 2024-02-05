@@ -12,6 +12,11 @@ public class Furniture {
     public Furniture() {
     }
 
+    public Furniture(String description, int quantity) {
+        this.description = description;
+        this.quantity = quantity;
+    }
+
     public Furniture(int price, String description, int itemNumber, String weight, int quantity) {
         this.price = price;
         this.description = description;
@@ -19,6 +24,7 @@ public class Furniture {
         this.weight = weight;
         this.quantity = quantity;
     }
+
 
     // getter for price
     public int getPrice() {
